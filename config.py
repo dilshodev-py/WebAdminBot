@@ -19,7 +19,11 @@ class WebConf:
     ADMIN_PASSWORD= getenv('ADMIN_PASSWORD')
 
 
+class PaymentConf:
+    PAYMENT_CLICK_TOKEN = getenv('PAYMENT_CLICK_TOKEN')
+
 class Conf:
     BOT = BotConf()
     DB = DbConf()
     WEB = WebConf()
+    PAY = PaymentConf()
