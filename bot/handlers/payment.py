@@ -18,7 +18,7 @@ async def invoice(message: Message):
         LabeledPrice(label='Iphone 15 pro', amount=1000*1 * 100),
         LabeledPrice(label='Iphone 14 pro', amount=2000*1 * 100)
     ]
-    await message.answer_invoice('Products', "Jami 3 product order qilindi", '1', conf.PAY.PAYMENT_CLICK_TOKEN,'UZS',prices= prices)
+    await message.answer_invoice('Products', "Jami 3 product order qilindi", '1', provider_token=conf.PAY.PAYMENT_CLICK_TOKEN,currency='UZS',prices= prices)
 
 @order_router.pre_checkout_query()
 async def success_handler(pre_checkout_query: PreCheckoutQuery) -> None:
